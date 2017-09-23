@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60C7A8D0-870D-4AB0-BB1D-414713279C41}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeafletMap</RootNamespace>
+    <AssemblyName>LeafletMap</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="src\Leaflet.draw-master\build\build.html" />
+    <Content Include="src\Leaflet.draw-master\build\build.js" />
+    <Content Include="src\Leaflet.draw-master\build\deps.js" />
+    <Content Include="src\Leaflet.draw-master\build\docs.js" />
+    <Content Include="src\Leaflet.draw-master\build\leaflet.draw-include.js" />
+    <Content Include="src\Leaflet.draw-master\dist\images\layers-2x.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\layers.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\marker-icon-2x.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\marker-icon.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\marker-shadow.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\spritesheet-2x.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\spritesheet.png" />
+    <Content Include="src\Leaflet.draw-master\dist\images\spritesheet.svg" />
+    <Content Include="src\Leaflet.draw-master\docs\css\main.css" />
+    <Content Include="src\Leaflet.draw-master\docs\css\normalize.css" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\basic.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\edithandlers.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\full.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\layers-2x.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\layers.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\marker-icon%402x.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\marker-icon-2x.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\marker-icon.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\images\marker-shadow.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\leaflet-src.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\leaflet.css" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\Leaflet.draw.drag-src.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\leaflet.geometryutil.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\leaflet.snap.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\spectrum.css" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\libs\spectrum.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples-0.7.x\snapping.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\basic.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\edithandlers.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\full.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\images\layers-2x.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\images\layers.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\images\marker-icon-2x.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\images\marker-icon.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\images\marker-shadow.png" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\leaflet-src.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\leaflet.css" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\Leaflet.draw.drag-src.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\leaflet.geometryutil.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\leaflet.snap.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\spectrum.css" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\spectrum.js" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\popup.html" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\snapping.html" />
+    <Content Include="src\Leaflet.draw-master\docs\highlight\highlight.pack.js" />
+    <Content Include="src\Leaflet.draw-master\docs\highlight\styles\github-gist.css" />
+    <Content Include="src\Leaflet.draw-master\docs\images\favicon.ico" />
+    <Content Include="src\Leaflet.draw-master\docs\images\forum-round.png" />
+    <Content Include="src\Leaflet.draw-master\docs\images\github-round.png" />
+    <Content Include="src\Leaflet.draw-master\docs\images\sprite.png" />
+    <Content Include="src\Leaflet.draw-master\docs\images\sprite.svg" />
+    <Content Include="src\Leaflet.draw-master\docs\images\twitter-round.png" />
+    <Content Include="src\Leaflet.draw-master\docs\images\twitter.png" />
+    <Content Include="src\Leaflet.draw-master\docs\js\docs.js" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.2.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.3.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.4.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.5.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.7.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-0.4.9.html" />
+    <Content Include="src\Leaflet.draw-master\docs\leaflet-draw-latest.html" />
+    <Content Include="src\Leaflet.draw-master\index.html" />
+    <Content Include="src\Leaflet.draw-master\Jakefile.js" />
+    <Content Include="src\Leaflet.draw-master\spec\after.js" />
+    <Content Include="src\Leaflet.draw-master\spec\before.js" />
+    <Content Include="src\Leaflet.draw-master\spec\expect.js" />
+    <Content Include="src\Leaflet.draw-master\spec\happen.js" />
+    <Content Include="src\Leaflet.draw-master\spec\index.html" />
+    <Content Include="src\Leaflet.draw-master\spec\karma.conf.js" />
+    <Content Include="src\Leaflet.draw-master\spec\sinon.js" />
+    <Content Include="src\Leaflet.draw-master\spec\spec.hintrc.js" />
+    <Content Include="src\Leaflet.draw-master\spec\suites\DrawControlSpec.js" />
+    <Content Include="src\Leaflet.draw-master\spec\suites\EditSpec.js" />
+    <Content Include="src\Leaflet.draw-master\spec\suites\GeometryUtilSpec.js" />
+    <Content Include="src\Leaflet.draw-master\spec\suites\LatLngUtilSpec.js" />
+    <Content Include="src\Leaflet.draw-master\spec\suites\SpecHelper.js" />
+    <Content Include="src\Leaflet.draw-master\src\Control.Draw.js" />
+    <Content Include="src\Leaflet.draw-master\src\copyright.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\DrawToolbar.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Circle.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.CircleMarker.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Feature.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Marker.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Polygon.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Polyline.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.Rectangle.js" />
+    <Content Include="src\Leaflet.draw-master\src\draw\handler\Draw.SimpleShape.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\EditToolbar.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.Circle.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.CircleMarker.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.Marker.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.Poly.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.Rectangle.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\Edit.SimpleShape.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\EditToolbar.Delete.js" />
+    <Content Include="src\Leaflet.draw-master\src\edit\handler\EditToolbar.Edit.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\GeometryUtil.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\LatLngUtil.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\LineUtil.Intersect.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\Polygon.Intersect.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\Polyline.Intersect.js" />
+    <Content Include="src\Leaflet.draw-master\src\ext\TouchEvents.js" />
+    <Content Include="src\Leaflet.draw-master\src\images\spritesheet-2x.png" />
+    <Content Include="src\Leaflet.draw-master\src\images\spritesheet.png" />
+    <Content Include="src\Leaflet.draw-master\src\images\spritesheet.svg" />
+    <Content Include="src\Leaflet.draw-master\src\leaflet.draw.css" />
+    <Content Include="src\Leaflet.draw-master\src\Leaflet.Draw.Event.js" />
+    <Content Include="src\Leaflet.draw-master\src\Leaflet.draw.js" />
+    <Content Include="src\Leaflet.draw-master\src\Toolbar.js" />
+    <Content Include="src\Leaflet.draw-master\src\Tooltip.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\dist\leaflet.toolbar-src.css" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\dist\leaflet.toolbar-src.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\dist\leaflet.toolbar.css" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\dist\leaflet.toolbar.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\examples\ColorPicker.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\examples\control.html" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\examples\minimal.html" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\examples\popup.html" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\examples\subtoolbar.html" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\Gruntfile.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\src\Toolbar.Control.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\src\Toolbar.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\src\Toolbar.Popup.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\src\ToolbarAction.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\karma.conf.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\SpecHelper.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\src\ToolbarActionSpec.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\src\ToolbarControlSpec.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\src\ToolbarPopupSpec.js" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\test\src\ToolbarSpec.js" />
+    <Content Include="src\leaflet\images\layers-2x.png" />
+    <Content Include="src\leaflet\images\layers.png" />
+    <Content Include="src\leaflet\images\marker-icon-2x.png" />
+    <Content Include="src\leaflet\images\marker-icon.png" />
+    <Content Include="src\leaflet\images\marker-shadow.png" />
+    <Content Include="src\leaflet\leaflet-src.js" />
+    <Content Include="src\leaflet\leaflet.css" />
+    <Content Include="src\leaflet\leaflet.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\leaflet\leaflet-src.js.map" />
+    <Content Include="src\leaflet\leaflet.js.map" />
+    <Content Include="src\Leaflet.draw-master\.codeclimate.yml" />
+    <Content Include="src\Leaflet.draw-master\.eslintrc" />
+    <Content Include="src\Leaflet.draw-master\.gitattributes" />
+    <Content Include="src\Leaflet.draw-master\.gitignore" />
+    <Content Include="src\Leaflet.draw-master\.travis.yml" />
+    <Content Include="src\Leaflet.draw-master\bower.json" />
+    <Content Include="src\Leaflet.draw-master\BREAKINGCHANGES.md" />
+    <Content Include="src\Leaflet.draw-master\build\docs-index.leafdoc" />
+    <Content Include="src\Leaflet.draw-master\build\docs-misc.leafdoc" />
+    <Content Include="src\Leaflet.draw-master\build\hintrc.json" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\comments.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\constructor.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\crs.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\destructor.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\event.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\example.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\factory.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\function.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\html.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\inherited.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\method.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\namespace.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\option.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\pane.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\projection.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\property.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\section.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\leafdoc-templates\supersection.hbs" />
+    <Content Include="src\Leaflet.draw-master\build\publish.sh" />
+    <Content Include="src\Leaflet.draw-master\CHANGELOG.md" />
+    <Content Include="src\Leaflet.draw-master\docs\examples\libs\leaflet-src.map" />
+    <Content Include="src\Leaflet.draw-master\docs\highlight\LICENSE" />
+    <Content Include="src\Leaflet.draw-master\ISSUE_TEMPLATE.md" />
+    <Content Include="src\Leaflet.draw-master\Leaflet.draw.iml" />
+    <Content Include="src\Leaflet.draw-master\MIT-LICENSE.md" />
+    <Content Include="src\Leaflet.draw-master\package-lock.json" />
+    <Content Include="src\Leaflet.draw-master\package.json" />
+    <Content Include="src\Leaflet.draw-master\README.md" />
+    <Content Include="src\Leaflet.draw-master\TODO.md" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\.gitignore" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\.npmignore" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\.travis.yml" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\bower.json" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\LICENSE" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\package.json" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\README.md" />
+    <Content Include="src\Leaflet.toolbar-master\Leaflet.toolbar-master\src\Toolbar.less" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53367</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53367/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
